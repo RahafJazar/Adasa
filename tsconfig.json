@@ -1,0 +1,56 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+//هو ملف اساسي للts  -> اللغة اللي الانجيولار مبنية عليها
+//specifies root files and compiler options  required to compile project 
+//ts : tsconfig.json   |  js : jscofig.json
+{
+  "compileOnSave": false, //true:vsutudio will compile in each save , false: in angular  projects angular cli will build
+  "typeAcquisition": {},
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitOverride": true, //ذا أردت إعادة تعريف Method من الـ Parent ->override يجب أن تكتب
+    "noPropertyAccessFromIndexSignature": true, //هذه الخاصية تؤثر فقط عندما يكون الكائن يحتوي على Index Signature. => 
+    /*
+interface User{
+[key:string]:string
+}
+private user:User ={
+"name" :"rahaf",
+"field":"it"
+}
+
+user.name ❌   ///Property 'name' comes from an index signature, so it must be accessed with ['name'].
+user["name"]✔
+
+
+*/
+    "noImplicitReturns": true, //يجبر كل الدوال ترجع قيمة في جميع الحالات 
+    "noFallthroughCasesInSwitch": true, //يمنع الانتقال من case ..للي بعدها بدون break
+    "skipLibCheck": true, //لا يفحص ملفات node_modules ->فبخلي ال build more fast
+    "isolatedModules": true, //يجبر كل ملفات ts ->تكون قابلة للترجمة بشكل مستقل 
+    "experimentalDecorators": true, //يسمح باستخدام  decorators
+    "importHelpers": true, //بدل من نسخ الاكواد المساعدة لكل ملف .يقوم باستيرادها من مكتب tslib
+    "target": "ES2022", //يحدد نسخة جافاسكريبت الناتجة 
+    "module": "preserve" //يحدد طريقة التعامل مع modules -> in new ang -> don't convert "impot,export "  but keep vite,esbuild convert them
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false, //يستخدم نظام IDs الحديث للترجمة. 
+    "strictInjectionParameters": true, //"تأكد أن كل معاملات الـ constructor قابلة للحقن من ناحية النوع (Dependency injection)." =>@Injectable({providedIn: 'root'})
+    "strictInputAccessModifiers": true, //يفحص ان خصائص @Input() ->يمكن الوصول اليها بطريقة صحيحة مع مراعاة محددات الوصول ...access modifiers(public,private,protected)
+    "typeCheckHostBindings": true, //يفحص انواع البيانات المستخدمة في @HostBinding , @HostListener ..لاكتشاف الاخطاء اثناء الترجمة
+    "strictTemplates": true //يفحص ال html  ..كما يفحص typescript==>مثال :{{name}}  =>  وعلى فرض ال name can be null -> will give error in 
+  },
+  "files": [], //هنا  يمكن كتابة files محددة ليقوم    .............ال ts بترجمتها  
+  //في Angular نتركها فارغة لأن المشروع يعتمد على references وملفات tsconfig.*.json.
+  "references": [ //تربط هذا الملف بملف اعدادات اخرى
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ],
+  /*
+  tsconfig.json هو الملف الأساسي الذي يحدد قواعد المشروع العامة، بينما الملفات الأخرى ترث منه وتخصص الإعدادات حسب نوع الملفات التي سيتم تجميعها.
+  */
+}
