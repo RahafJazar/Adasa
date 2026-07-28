@@ -4,3 +4,7 @@
 /* @utility container {
     margin: auto
 } */
+
+body {
+    direction: rtl;
+}
