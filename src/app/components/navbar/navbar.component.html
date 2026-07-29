@@ -1,5 +1,5 @@
-<nav class="max-w-7xl">
-    <div class=" bg-green-400 w-screen flex justify-between items-center px-8 py-2">
+<nav class="max-w-full backdrop-blur-xl bg-[#0a0a0a]/94 text-white border-b-2 border-[#504949] relative">
+    <div class=" w-screen flex justify-between items-center px-20 py-5">
         <div class="navbar-logo group flex  gap-4 items-center">
             <div
                 class="w-13 h-13 rounded-xl bg-yellow-300 flex justify-center items-center group-hover:scale-105 transition-all duration-300">
@@ -10,14 +10,77 @@
                 <h1 class="text-3xl font-semibold text-white">عدسة </h1>
                 <p class="text-orange-400/80 hidden md:block ">عالم التصوير الفوتوغرافي</p>
             </div>
-            navbar-logo
+
         </div>
-        <div class="navbar-links">
-            navbar-links
+        <div class="navbar-links hidden lg:flex items-center">
+            <div
+                class=" flex gap-4 items-center bg-[#161616] rounded-full border border-[#504949]/60 p-1.5 font-medium">
+                <a routerLink="/home"
+                    routerLinkActive="bg-linear-to-r from-orange-500 to-orange-600 rounded-full  text-white"
+                    class="px-4 py-2.5 text-neutral-400 hover:text-white">الرئيسية</a>
+                <a routerLink="/blog"
+                    routerLinkActive="bg-linear-to-r from-orange-500 to-orange-600 rounded-full text-white "
+                    class="px-4 py-2.5  text-neutral-400 hover:text-white">المدونة</a>
+                <a routerLink="/about"
+                    routerLinkActive="bg-linear-to-r from-orange-500 to-orange-600 rounded-full  text-white"
+                    class="px-4 py-2.5  text-neutral-400 hover:text-white">من نحن</a>
+            </div>
         </div>
-        <div class="navbar-more">
-            navbar-more
+        <div class="navbar-more hidden lg:flex  items-center gap-3">
+            <button
+                class="text-neutral-500 hover:text-orange-500 hover:bg-[#161616] border border-[#504949]/30 p-4 rounded-xl">
+                <svg class="w-5 h-5  " fill="none" stroke="oklch(0.556 0 0)" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24"
+                    height="24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2px"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="oklch(0.556 0 0)" fill="none"></path>
+                </svg>
+            </button>
+            <a class="btn-primary  text-sm" routerLink="/blog" roukterLinkActive="">ابدأ القراءة
+            </a>
+        </div>
+
+        <button
+            class="hamburger-icon block  lg:hidden    p-4 border border-transparent rounded-xl hover:border-[#504949]/60 transition duration-200 ">
+            @if(!isMenuOpen){
+            <img src="/images/svg/svgexport-2.svg" alt="" (click)="toggleMenu()">
+            }
+            @else{
+            <svg class="w-6 h-6" fill="none" stroke="oklch(0.708 0 0)" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"
+                (click)="closeMenu()">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2px" d="M6 18L18 6M6 6l12 12"
+                    stroke="oklch(0.708 0 0)" fill="none"></path>
+            </svg>
+            }
+
+        </button>
+
+
+    </div>
+
+    @if(isMenuOpen){
+
+    <div
+        class="navbar-links flex bg-[#161616] top-full left-0 w-full items-center p-3 absolute  transition-all duration-500 ease-in-out ">
+        <div class="bg-[#161616] backdrop-blur-xl rounded-2xl p-4 border border-[#262626]  w-full">
+            <div class="flex flex-col gap-3">
+                <a routerLink="/home"
+                    routerLinkActive="bg-orange-500/10 text-orange-500 border border-orange-500 rounded-xl"
+                    class="px-4 py-3 text-neutral-400 hover:text-white hover:bg-neutral-800 hover:rounded-xl transition duration-500 ease-in-out ">الرئيسية</a>
+                <a routerLink="/blog"
+                    routerLinkActive="bg-orange-500/10 text-orange-500 border border-orange-500 rounded-xl "
+                    class="px-4 py-3  text-neutral-400 hover:text-white  hover:bg-neutral-800 hover:rounded-xl transition duration-500 ease-in-out">المدونة</a>
+                <a routerLink="/about"
+                    routerLinkActive="bg-orange-500/10 text-orange-500 border border-orange-500 rounded-xl"
+                    class="px-4 py-3  text-neutral-400 hover:text-white  hover:bg-neutral-800 hover:rounded-xl  transition duration-500 ease-in-out">من
+                    نحن</a>
+                <a class="btn-primary  text-md text-center" routerLink="/blog" routerLinkActive="">ابدأ القراءة
+                </a>
+            </div>
+
         </div>
     </div>
 
+    }
 </nav>

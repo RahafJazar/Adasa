@@ -4,7 +4,13 @@
 /* @utility container {
     margin: auto
 } */
+* {
+    box-sizing: border-box;
+
+}
 
 body {
     direction: rtl;
+    margin: 0;
+    padding: 0;
 }
