@@ -4,13 +4,50 @@
 /* @utility container {
     margin: auto
 } */
+@font-face {
+    font-family: 'Tajawal';
+    src: url('/fonts/Tajawal/Tajawal-Medium.ttf');
+}
+
 * {
     box-sizing: border-box;
-
+    font-family: 'Tajawal', system-ui, -apple-system, sans-serif;
 }
+
+
 
 body {
     direction: rtl;
     margin: 0;
     padding: 0;
+}
+
+@layer components {
+    .cont {
+        width: 100%;
+        padding-inline: calc(var(--spacing) * 20)
+            /* 5rem = 80px */
+        ;
+        padding-block: calc(var(--spacing) * 5)
+            /* 1.25rem = 20px */
+        ;
+    }
+}
+
+@layer components {
+    .btn-orange {
+        border-radius: calc(infinity * 1px);
+        background: linear-gradient(to right, var(--color-orange-500), var(--color-orange-600));
+        padding-inline: --spacing(10);
+        padding-block: --spacing(5);
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-white);
+        box-shadow: var(--shadow-md);
+        transition: transform 2s ease;
+
+        &:hover {
+            color: rgba(22, 22, 22, 00.2);
+            transform: translateY(-2px);
+        }
+    }
 }

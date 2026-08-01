@@ -1,0 +1,95 @@
+@layer component {
+    .social-icons {
+        width: calc(var(--spacing) * 11);
+        height: calc(var(--spacing) * 11);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: calc(var(--spacing) * 3);
+        background: #161616;
+        border: 1px solid #262626;
+        border-radius: var(--radius-xl)
+            /* 0.75rem = 12px */
+        ;
+        color: oklch(0.556 0 0);
+
+        &:hover {
+            background-image: linear-gradient(to right, var(--color-orange-500), var(--color-orange-600));
+            color: white;
+        }
+
+    }
+
+    .footer-title {
+        color: white;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 30px;
+            height: 3px;
+            background-color: var(--color-orange-500);
+            position: absolute;
+            top: 50%;
+            left: 110%;
+        }
+
+
+    }
+
+    .footer-ul {
+        list-style-type: none;
+        padding-block: calc(var(--spacing)*4);
+
+        li {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: calc(var(--spacing)*4);
+            color: var(--color-neutral-500);
+
+            a {
+                transform: translateX(60px);
+                transition: all 0.3s ease-in;
+            }
+
+            img {
+                transform: rotate(180deg) translateX(-80px);
+                display: inline-block;
+                transition: all 0.3s ease-in;
+                opacity: 0;
+
+
+            }
+
+            &:hover {
+                a {
+                    transform: translateX(20px);
+                    color: var(--color-orange-500);
+                }
+
+                img {
+                    transform: rotate(180deg) translateX(-30px);
+                    opacity: 1;
+
+                }
+            }
+        }
+
+
+
+    }
+
+    .form-control {
+        border: 2px solid var(--color-neutral-700);
+        padding: calc(var(--spacing)*3) calc(var(--spacing)*5);
+        border-radius: var(--radius-xl);
+        background-color: #161616;
+        outline: none;
+
+        &:focus {
+            border: 2px solid var(--color-orange-500);
+        }
+    }
+}
