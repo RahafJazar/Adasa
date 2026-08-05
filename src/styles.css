@@ -108,6 +108,33 @@ body {
         line-height: var(--leading-relaxed);
         color: var(--color-neutral-400);
     }
+
+    .animate-ping {
+        animation: var(--animate-ping);
+    }
+
+    .animate-pulse {
+        animation: var(--animate-pulse);
+    }
+
+    .gradient-text {
+        background: linear-gradient(135deg, #f97316, #fbbf24);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+
+
+    }
+
+    .glass-card {
+        border-radius: var(--radius-3xl);
+        background: rgba(22, 22, 22, 0.8);
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(38, 38, 38);
+        border-image: none;
+    }
 }
 
 
