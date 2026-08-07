@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { TeamMembersComponent } from "./team-members/team-members.component";
 
 @Component({
   selector: 'app-about-us',
-  imports: [],
+  imports: [TeamMembersComponent],
   templateUrl: './about-us.component.html',
   styleUrl: './about-us.component.css',
 })

@@ -135,6 +135,19 @@ body {
         border-color: rgb(38, 38, 38);
         border-image: none;
     }
+
+    .section-label {
+        padding-inline: calc(var(--spacing)*4);
+        padding-block: calc(var(--spacing)*2);
+        font-size: var(--text-sm);
+        --tw-font-weight: var(--font-weight-medium);
+        line-height: var(--tw-leading, var(--text-sm--line-height));
+        font-weight: var(--font-weight-medium);
+        color: #f97316;
+        background: #f973161a;
+        border: 1px solid #f973164d;
+        border-radius: 3.40282e38px;
+    }
 }
 
 

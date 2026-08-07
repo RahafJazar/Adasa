@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Post } from '../../../interfaces/post.interface';
+import { POSTS } from './../../../data/posts';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-team-members',
@@ -7,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './team-members.component.css',
 })
 export class TeamMembersComponent {
+  posts: Post[] = POSTS;
 
 }
